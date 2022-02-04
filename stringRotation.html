@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Rotation</title>
+    <style>
+        .left-output-text, .right-output-text {
+            display: inline-block;
+            padding-right: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter a string:</h2>
+    <input class="input-text" type="text"><br><br>
+    <button class="left-rotate-btn">Rotate Left</button>
+    <button class="right-rotate-btn">Rotate Right</button><br>
+    <h3 class="left-output-text"></h3>
+    <h3 class="right-output-text"></h3>
+    <script>
+        let input_obj = document.querySelector('.input-text')
+        let new_str1 = new_str2 = old_strL = old_strR = "";
+    </script>
+    <script>
+        function rotateLeft() {
+            new_str1 = new_str1[new_str1.length - 1] + new_str1.slice(0,(new_str1.length - 1));
+            document.querySelector('.left-output-text').innerHTML = new_str1;
+        }
+
+        function inputChangeL() {
+            input_str = input_obj.value;
+            console.log('input_str',input_str);
+            if(old_strL == input_str){
+                console.log("old input",input_str);
+                rotateLeft();
+            }
+            else{
+                old_strL = input_str;
+                new_str1 =input_str;
+                console.log("new input",new_str1);
+                rotateLeft();
+            }            
+        }
+    </script>
+    <script>
+        function rotateRight() {
+            new_str2 = new_str2.slice(1,(new_str2.length)) + new_str2[0];
+            console.log(new_str2);
+            document.querySelector('.right-output-text').innerText = new_str2;
+        }
+
+        function inputChangeR() {
+            input_str = input_obj.value;
+            console.log('input_str',input_str);
+            if(old_strR == input_str){
+                console.log("old input",input_str);
+                rotateRight();
+            }
+            else{
+                old_strR = input_str;
+                new_str2 = input_str;
+                console.log("new input",new_str2);
+                rotateRight();
+            }            
+        }
+    </script>
+    <script>
+        document.querySelector('.left-rotate-btn').addEventListener('click',inputChangeL);
+        document.querySelector('.right-rotate-btn').addEventListener('click',inputChangeR);
+    </script>
+    <!-- <script>
+        //every character change in input box is considered (which is not necessary):
+        let input_obj = document.querySelector('.input-text')
+        let input_str = input_obj.value;
+        let new_str1 = new_str2 = input_str;
+
+        input_obj.addEventListener('input',inputChange);
+
+        function inputChange() {
+            input_str = input_obj.value;
+            //console.log("new input",input_str);
+            new_str1 =input_str;
+            new_str2 = input_str;
+        }
+    </script>
+    <script>
+        function rotateLeft() {
+            new_str1 = new_str1[new_str1.length - 1] + new_str1.slice(0,(new_str1.length - 1));
+            //console.log(new_str1); 
+            document.querySelector('.left-output-text').innerHTML = new_str1;
+        }
+
+        document.querySelector('.left-rotate-btn').addEventListener('click',rotateLeft);
+    </script>
+    <script>
+        function rotateRight() {
+            new_str2 = new_str2.slice(1,(new_str2.length)) + new_str2[0];
+            //console.log(new_str2);
+            document.querySelector('.right-output-text').innerText = new_str2;
+        }
+
+        document.querySelector('.right-rotate-btn').addEventListener('click',rotateRight);
+    </script> -->
+</body>
+</html>
