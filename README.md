@@ -1,4 +1,4 @@
-# String - Rotation
+# String - Rotation:
 
 This is illustrated using HTML and JavaScript.
 
